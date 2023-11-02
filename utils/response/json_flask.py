@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from numpy import ndarray
 
 from utils.response.json_response import JsonResponse
 # 规范Flask响应

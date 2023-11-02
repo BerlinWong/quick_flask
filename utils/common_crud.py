@@ -1,7 +1,7 @@
 from pandas.io.json import to_json
 from sqlalchemy.orm import sessionmaker
 
-from models.models import User
+from models.models import AllSzShStock, IndexList
 from utils.operate_db import engine
 
 
@@ -20,7 +20,7 @@ class BaseSQL():
 
     # 简单查询
     def select(self):
-        return self.session.query(User).all()
+        return self.session.query(AllSzShStock).all()
 
     # 基本查询器
     def base_select(self, tb_lass, **kwargs):
@@ -31,8 +31,8 @@ class BaseSQL():
         self.session.close()
 
 
-
-
-basesql = BaseSQL()
-print(basesql.console_sql(User))
-basesql.close_session()
+# basesql = BaseSQL()
+# res = basesql.base_select(AllSzShStock)
+# for i in res:
+#     print(i.code)
+# basesql.close_session()
